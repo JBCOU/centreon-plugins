@@ -200,7 +200,7 @@ sub check_options {
             }
         }
     };
-    foreach my $metric (keys %$metrics_mapping) {
+    foreach my $metric (sort keys %$metrics_mapping) {
         next if (defined($self->{option_results}->{filter_metric}) && $self->{option_results}->{filter_metric} ne ''
             && $metric !~ /$self->{option_results}->{filter_metric}/);
         next if (defined($metrics_mapping->{$metric}->{cw_metric}) && $metrics_mapping->{$metric}->{cw_metric} == 0);
